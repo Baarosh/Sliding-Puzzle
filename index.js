@@ -39,6 +39,7 @@ const changeTiles = (x1, y1, x2, y2, gameState) => {
 }
 
 const moveTiles = (el1, el2) => {
+	// eslint-disable-next-line no-extra-semi
 	;[el1.style.top, el1.style.left, el2.style.top, el2.style.left] = [
 		el2.style.top,
 		el2.style.left,
@@ -49,7 +50,7 @@ const moveTiles = (el1, el2) => {
 
 const shuffleTiles = (gameState) => {
 	for (let i = 0; i < 10; i++) {
-		const nums = [1, 2, 3, 4].map((n) => Math.floor(Math.random() * 3))
+		const nums = [1, 2, 3, 4].map(() => Math.floor(Math.random() * 3))
 		moveTiles(gameState[nums[0]][nums[1]], gameState[nums[2]][nums[3]])
 		changeTiles(nums[0], nums[1], nums[2], nums[3], gameState)
 	}
@@ -83,7 +84,7 @@ const checkIfWin = (gameBoard, gameState) => {
 }
 
 renderGame(gameBoard, gameState)
-// shuffleTiles(gameState)
+shuffleTiles(gameState)
 setTimeout(styleTiles, 0.1, gameState)
 
 gameBoard.addEventListener('click', (e) => {
