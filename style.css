@@ -1,0 +1,33 @@
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+}
+
+.game-board {
+	width: 400px;
+	height: 400px;
+	background-color: rgb(47, 51, 70);
+	position: relative;
+}
+
+.tile {
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	color: transparent;
+}
