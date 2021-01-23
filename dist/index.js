@@ -1,4 +1,3 @@
-/* eslint-disable no-param-reassign */
 const gameBoard = document.querySelector('.game-board')
 const tiles = document.querySelectorAll('.tile')
 
@@ -40,8 +39,7 @@ const changeTiles = (x1, y1, x2, y2, state) => {
 }
 
 const moveTiles = (el1, el2) => {
-    // eslint-disable-next-line no-extra-semi
-    ;[el1.style.top, el1.style.left, el2.style.top, el2.style.left] = [
+    [el1.style.top, el1.style.left, el2.style.top, el2.style.left] = [
         el2.style.top,
         el2.style.left,
         el1.style.top,
@@ -90,6 +88,7 @@ setTimeout(styleTiles, 0.1, gameState)
 
 gameBoard.addEventListener('click', (e) => {
     if (e.target.classList[0] === 'tile') {
+        console.log(e.target.classList)
         const targetTile = e.target
         let x
         let y
